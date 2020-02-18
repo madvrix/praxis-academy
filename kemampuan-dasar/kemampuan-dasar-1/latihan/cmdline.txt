@@ -1,0 +1,80 @@
+root@rr:~# cat > filesatu
+isi dari file 1
+root@rr:~# cat filesatu
+isi dari file 1
+root@rr:~# cat > filedua
+isi dari file 2
+root@rr:~# cat filesatu filedua > filetiga
+root@rr:~# cat filetiga
+isi dari file 1
+isi dari file 2
+root@rr:~# mv filetiga filegabung
+
+root@rr:~# ls -al
+total 116
+drwxr-xr-x 15 root root  4096 Feb 18 06:01 .
+drwxr-xr-x 19 root root  4096 Mar 25  2019 ..
+-rw-------  1 root root  3727 Feb 18 05:24 .bash_history
+-rw-r--r--  1 root root  3391 Feb 28  2019 .bashrc
+drwx------ 13 root root  4096 Dec 27 05:43 .cache
+drwxr-xr-x 16 root root  4096 Feb 18 04:16 .config
+drwxr-xr-x  2 root root  4096 Mar 26  2019 Desktop
+drwxr-xr-x  5 root root  4096 Feb 18 05:00 Documents
+drwxr-xr-x  4 root root  4096 Dec 26 22:12 Downloads
+-rw-r--r--  1 root root    16 Feb 18 06:00 filedua
+-rw-r--r--  1 root root    32 Feb 18 06:00 filegabung
+-rw-r--r--  1 root root    16 Feb 18 05:58 filesatu
+drwx------  3 root root  4096 Mar 26  2019 .gnupg
+-rw-------  1 root root 17840 Feb 18 05:49 .ICEauthority
+drwx------  3 root root  4096 Mar 26  2019 .local
+drwx------  5 root root  4096 Mar 26  2019 .mozilla
+drwxr-xr-x  2 root root  4096 Mar 26  2019 Music
+-rw-------  1 root root   156 May 20  2019 .mysql_history
+drwxr-xr-x  2 root root  4096 Oct 29 06:03 Pictures
+-rw-r--r--  1 root root   148 Nov 29  2018 .profile
+drwxr-xr-x  2 root root  4096 Mar 26  2019 Public
+drwxr-xr-x  2 root root  4096 Mar 26  2019 Templates
+drwxr-xr-x  2 root root  4096 Mar 26  2019 Videos
+-rw-r--r--  1 root root   209 May 27  2019 .wget-hsts
+root@rr:~# rm filegabung filedua filesatu
+root@rr:~# ls -al
+total 104
+drwxr-xr-x 15 root root  4096 Feb 18 06:04 .
+drwxr-xr-x 19 root root  4096 Mar 25  2019 ..
+-rw-------  1 root root  3727 Feb 18 05:24 .bash_history
+-rw-r--r--  1 root root  3391 Feb 28  2019 .bashrc
+drwx------ 13 root root  4096 Dec 27 05:43 .cache
+drwxr-xr-x 16 root root  4096 Feb 18 04:16 .config
+drwxr-xr-x  2 root root  4096 Mar 26  2019 Desktop
+drwxr-xr-x  5 root root  4096 Feb 18 05:00 Documents
+drwxr-xr-x  4 root root  4096 Dec 26 22:12 Downloads
+drwx------  3 root root  4096 Mar 26  2019 .gnupg
+-rw-------  1 root root 17840 Feb 18 05:49 .ICEauthority
+drwx------  3 root root  4096 Mar 26  2019 .local
+drwx------  5 root root  4096 Mar 26  2019 .mozilla
+drwxr-xr-x  2 root root  4096 Mar 26  2019 Music
+-rw-------  1 root root   156 May 20  2019 .mysql_history
+drwxr-xr-x  2 root root  4096 Oct 29 06:03 Pictures
+-rw-r--r--  1 root root   148 Nov 29  2018 .profile
+drwxr-xr-x  2 root root  4096 Mar 26  2019 Public
+drwxr-xr-x  2 root root  4096 Mar 26  2019 Templates
+drwxr-xr-x  2 root root  4096 Mar 26  2019 Videos
+-rw-r--r--  1 root root   209 May 27  2019 .wget-hsts
+root@rr:~# ps
+  PID TTY          TIME CMD
+ 1954 pts/0    00:00:00 bash
+ 2378 pts/0    00:00:00 ps
+root@rr:~# free -m
+              total        used        free      shared  buff/cache   available
+Mem:           3828        1573        1414         174         840        1846
+Swap:          8009           0        8009
+root@arwanda:~# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           383M   12M  372M   3% /run
+/dev/sda7        20G   15G  4.0G  80% /
+tmpfs           1.9G   27M  1.9G   2% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           1.9G     0  1.9G   0% /sys/fs/cgroup
+tmpfs           383M   12K  383M   1% /run/user/130
+tmpfs           383M   32K  383M   1% /run/user/0
