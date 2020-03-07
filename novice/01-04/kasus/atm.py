@@ -1,51 +1,101 @@
 saldo=0
-def tambah(saldo):
+def tambah(pilihan,saldo):
         print ("""
-        Masukan nominal yang akan ditabung
-         = """,end="Rp.")
+Masukan nominal yang akan ditabung
+= """,end="Rp.")
         nilai=int(input())
         saldo=saldo+nilai
+        print("""
+
+------------------------------------------
+        Lakukan transaksi lagi?
+        
+        """)
+        prom=input("Y/N")
+        pilihan=0
+        if prom=="Y" or prom=="y":
+            menu()
+            pilih(int(input("---->")),saldo)
         return saldo
-def tarik(saldo):
+
+
+def tarik(pilihan,saldo):
         print ("""
-        Masukan nominal yang akan diambil
-         = """,end="Rp.")
+
+------------------------------------------
+
+Masukan nominal yang akan diambil
+= """,end="Rp.")
         nilai=int(input())
         saldo=saldo-nilai
-        return saldo
-def cek(saldo):
         print("""
-        Saldo yang anda miliki adalah
-         = Rp.""",saldo)
+
+------------------------------------------
+        Lakukan transaksi lagi?
+        
+        """)
+        prom=input("Y/N")
+        pilihan=0
+        if prom=="Y" or prom=="y":
+            menu()
+            pilih(int(input("---->")),saldo)
+        return saldo
+
+
+def cek(pilihan,saldo):
+
+        print("""
+
+------------------------------------------
+
+Saldo yang anda miliki adalah
+= Rp.""",saldo)
+        print("""
+
+------------------------------------------
+        Lakukan transaksi lagi?
+        
+        """)
+        prom=input("Y/N")
+        pilihan=0
+        if prom=="Y" or prom=="y":
+            menu()
+            pilih(int(input("---->")),saldo)
+
 def pilih(pilihan,saldo):
         saldo=saldo
         if pilihan==1:
-            cek(saldo)
+            cek(pilihan,saldo)
         elif pilihan==2:
-            saldo=tambah(saldo)
+            saldo=tambah(pilihan,saldo)
             print("""
             """)
         elif pilihan==3:
-            saldo=tarik(saldo)
+            saldo=tarik(pilihan,saldo)
         else:
-            print("input yang anda masukan salah")
-            pilih(input(),saldo)
+            print("""
+------------------------------------------
+Input yang anda masukan salah..!
+silahkan masukan input anda
+""")
+            pilih(int(input("---->")),saldo)
 
 ##saldo=tarik(saldo) >>>update setelah tarik saldo
 ##saldo=tambah(saldo) >>>update setelah tambah
 ##cek(saldo) >>>cek nilai saldo
-print("""
+def menu():
+    print("""
 
--------------ATM PYTHON-------------
+-------------   ATM PYTHON   -------------
 
-->(1)Cek saldo     ->(3)Tarik Tunai
-->(2)Setor Tunai
+    ->(1)Cek saldo     ->(3)Tarik Tunai
+    ->(2)Setor Tunai
 
-------------------------------------
+------------------------------------------
 
-Masukan layanan yang anda inginkan
----------------(1/2/3)--------------
+    Masukan layanan yang anda inginkan
+------------------(1/2/3)-----------------
 """)
-
+menu()
 pilihan=int(input("---->"))
 pilih(pilihan,saldo)
