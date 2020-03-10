@@ -54,12 +54,14 @@ name=[
     {'nama':'Jane','umur':14},
     {'nama':'Tono','umur':24}
 ]
-del name
+
+#print(name[int('1')].get("umur"))
 ety_plus=[]
 #--atanpa***error***
-for i in name:
-    if name[i].umur>='18':
-        ety_plus.append(name[i])
+for i in range(len(name)):
+    a = name[i].get("umur")
+    if a>=18:
+        ety_plus.append(name[i].get('nama'))
 ety_plus
 name
 #-6 array reduce------------------------------------------
@@ -70,6 +72,15 @@ def s(arr):
     for i in range(len(arr)):
         x=int(arr[i])
         hasil=hasil+x
-    return hasil
+    return hasil+10
 tambah=s(arr)
 tambah
+
+arr=['javascript','python','php','java','c']
+ar=[]
+def ls(arr):
+    for i in range(len(arr)):
+        a=arr[i]
+        ar.append(len(a))
+ls(arr)
+ar
