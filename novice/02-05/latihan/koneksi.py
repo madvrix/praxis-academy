@@ -1,8 +1,8 @@
 import mysql.connector
-db=mysql.connector.connect(
+db=mysql.connector.Connect(
+    host='localhost',
     user='root',
-    passwd='password',
-    host='localhost'
+    password=''
 )
 
 if db.is_connected():
